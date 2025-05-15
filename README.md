@@ -55,19 +55,15 @@ cd meme-gallery
 ```
 
 ### 2. 🔙 Запуск бекенду
-Перейти в директорію backend/:
-
-```bash
-cd backend
-```
 Встановити залежності:
 
 ```bash
-pip install fastapi uvicorn sqlalchemy pydantic
+pip install -r requirements.txt
 ```
-Запустити сервер:
+Перейти в директорію backend/ і запустити сервер:
 
 ```bash
+cd backend
 uvicorn main:app --reload
 ```
 Бекенд працюватиме на: http://localhost:8000
@@ -89,6 +85,9 @@ python -m http.server 8080
 
 👉 http://localhost:8080
 
+Приклад задеплойеного сайту:
+- https://vovathehuman.github.io/ - сайт
+- https://mem-site.onrender.com/docs - бекенд
 ---
 
 ## 📌 Додатково
