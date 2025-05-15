@@ -1,12 +1,21 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List, Optional
-from datetime import datetime
+from datetime import
+from fastapi.middleware.cors import CORSMiddleware
 
 from models import Meme, MemeCreate, MemeDB
 from database import SessionLocal, engine, Base
 
 app = FastAPI(title="Meme API with DB")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # або ["http://localhost:8080"] для безпеки
+    allow_credentials=True,
+    allow_methods=["*"],  # ← ОБОВʼЯЗКОВО! дозволяє POST, OPTIONS тощо
+    allow_headers=["*"],  # ← ОБОВʼЯЗКОВО! дозволяє заголовки, напр. Content-Type
+)
 
 # Створення таблиць
 Base.metadata.create_all(bind=engine)
