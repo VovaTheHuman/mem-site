@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List, Optional
-from datetime import
+from datetime import datetime
 from fastapi.middleware.cors import CORSMiddleware
 
 from models import Meme, MemeCreate, MemeDB
